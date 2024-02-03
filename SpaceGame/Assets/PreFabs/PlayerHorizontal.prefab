@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 6660183869970851264}
   - component: {fileID: 7764876889351072357}
   - component: {fileID: 5487237220269678255}
-  - component: {fileID: 2284142796950075251}
+  - component: {fileID: 4471236867938645328}
   - component: {fileID: 5435101693176105793}
   - component: {fileID: 281080489609475159}
   - component: {fileID: 8203982632824804101}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerHorizontal
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6279822582171991930}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.3, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -8.06, y: -3.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7764876889351072357
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2284142796950075251
+--- !u!114 &4471236867938645328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,11 +99,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6279822582171991930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 257ce16e72bd0e747aae9cba59361f2a, type: 3}
+  m_Script: {fileID: 11500000, guid: d71269f1522b79c459641a20d7e6b950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  turnSpeed: 60
+  turnSpeed: 100
 --- !u!54 &5435101693176105793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 96
   m_CollisionDetection: 0
 --- !u!64 &281080489609475159
 MeshCollider:
