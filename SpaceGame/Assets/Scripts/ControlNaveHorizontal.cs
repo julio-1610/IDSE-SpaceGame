@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControlNaveHorizontal : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 20f;
+    [SerializeField] float movementSpeed = 10f;
     [SerializeField] float turnSpeed = 100f;
 
 
