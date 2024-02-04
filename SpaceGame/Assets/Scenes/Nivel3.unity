@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 5133277892462167462, guid: 36a3843a23bd5aa4bbe21c9488db7bbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6468006213803978079, guid: 36a3843a23bd5aa4bbe21c9488db7bbf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.98
@@ -575,6 +579,10 @@ PrefabInstance:
     - target: {fileID: 6279822582171991930, guid: 10b801fe93709d84cab28fc11555bcb7, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279822582171991930, guid: 10b801fe93709d84cab28fc11555bcb7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6660183869970851264, guid: 10b801fe93709d84cab28fc11555bcb7, type: 3}
       propertyPath: m_LocalPosition.x
