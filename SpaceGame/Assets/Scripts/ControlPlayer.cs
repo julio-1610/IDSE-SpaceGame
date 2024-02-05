@@ -41,4 +41,11 @@ public class ControlPlayer : MonoBehaviour
             myT.position += myT.up * movementSpeed * Time.deltaTime * vertical;
         }
     }
+
+    private void onCollisionEnter(Collision c)
+    {
+        Vector3 position = transform.position;
+        position.z = Mathf.Clamp(position.z, 10f, 10f);
+        transform.position = position;
+    }
 }
