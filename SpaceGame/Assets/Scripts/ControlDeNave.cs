@@ -206,7 +206,7 @@ public class ControlDeNave : MonoBehaviour
 
     private void ActualizarPuntajeUI()
     {
-        PuntajeText.text = "Puntaje: " + Puntaje;
+        PuntajeText.text = "Vida: " + Puntaje;
     }
 
     private void GameOver()
