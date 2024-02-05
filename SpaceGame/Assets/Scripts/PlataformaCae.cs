@@ -9,10 +9,13 @@ public class PlataformaCae : MonoBehaviour
     private float esperaVolver = 2f;
     private Vector3 posInicial;
     private Rigidbody rb;
+    private Animator animacion;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
         posInicial = this.gameObject.transform.position;
+        animacion = this.GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,5 +43,6 @@ public class PlataformaCae : MonoBehaviour
         rb.isKinematic = true;
         rb.useGravity = false;
         //rb.velocity = new Vector3(0f, 0f, 0f);
+        animacion.SetBool("Reaparece", true);
     }
 }
