@@ -463,6 +463,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8529802601464619396}
     - target: {fileID: 1155382312666109913, guid: 93d7c1127e00e3544b1d3c9228ad322c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155382312666109913, guid: 93d7c1127e00e3544b1d3c9228ad322c, type: 3}
       propertyPath: PuntajeText
       value: 
       objectReference: {fileID: 641209270}
@@ -590,7 +594,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 734063948488811792, guid: d93104689d4a6574ab3bae8e47cab97b, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 8529802601464619402}
   m_SourcePrefab: {fileID: 100100000, guid: d93104689d4a6574ab3bae8e47cab97b, type: 3}
 --- !u!1001 &4803490365773821127
 PrefabInstance:
@@ -702,6 +709,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 734063948488811792, guid: d93104689d4a6574ab3bae8e47cab97b, type: 3}
   m_PrefabInstance: {fileID: 3061033527293451770}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8529802601464619402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8529802601464619396}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c67cc3596c212408ac62b77469d505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
