@@ -7,14 +7,16 @@ TagManager:
   - Mercurio
   - Asteroide
   - Plataforma
+  - Pipe
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Post processing
   - 
   - 
   - 
