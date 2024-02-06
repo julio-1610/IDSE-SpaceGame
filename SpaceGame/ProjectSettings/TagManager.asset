@@ -9,6 +9,7 @@ TagManager:
   - Plataforma
   - Pipe
   - Ground
+  - KillZone
   layers:
   - Default
   - TransparentFX
