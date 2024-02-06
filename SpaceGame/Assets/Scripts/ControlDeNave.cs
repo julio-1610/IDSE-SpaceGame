@@ -9,13 +9,8 @@ public class ControlDeNave : MonoBehaviour
     public GameOverScript GameOverScript;
     int maxPlatform = 0;
     public GameObject Nave;
-    public GameObject PipePrefab;
     public GameObject panelVictoria;
     public Text PuntajeText;
-    public float Gravity = 30;
-    public float Jump = 10;
-    public float PipeSpawnInterval = 2;
-    public float PipesSpeed = 5;
     public float CombustibleMaximo = 100.0f;
     public Scrollbar BarraCombustible;
     public float LimiteInferior = -10.0f;
@@ -23,10 +18,6 @@ public class ControlDeNave : MonoBehaviour
     public Color ColorCombustibleBajo = Color.red;
     public float DuracionCombustibleSegundos = 120.0f; // Duración deseada en segundos
 
-    private float VerticalSpeed;
-    private float PipeSpawnCountdown;
-    private GameObject PipesHolder;
-    private int PipeCount;
     private int Puntaje;
     private float CombustibleActual;
     private bool juegoIniciado = false;
@@ -43,30 +34,6 @@ public class ControlDeNave : MonoBehaviour
         // Inicializar combustible
         CombustibleActual = CombustibleMaximo;
 
-        // Resetear tuberías
-        PipeCount = 0;
-        Destroy(PipesHolder);
-        PipesHolder = new GameObject("PipesHolder");
-        PipesHolder.transform.parent = this.transform;
-
-        // Resetear nave
-        VerticalSpeed = 0;
-        Nave.transform.position = Vector3.up * 5;
-
-        // Resetear tiempo
-        PipeSpawnCountdown = 0;
-
-        // Inicializar color de la barra de combustible
-        BarraCombustible.image.color = ColorCombustibleNormal;
-
-        Rigidbody rb = Nave.GetComponent<Rigidbody>();
-        if (rb == null)
-        {
-            rb = Nave.AddComponent<Rigidbody>();
-        }
-        rb.useGravity = true;  // Ajusta esto según sea necesario
-        rb.isKinematic = false;  // Hacer la nave kinemática si no quieres que sea afectada por fuerzas físicas
-
         panelVictoria.SetActive(false);
         botonSiguienteNivel.gameObject.SetActive(false);
         Time.timeScale = 0f;
@@ -75,16 +42,6 @@ public class ControlDeNave : MonoBehaviour
 
     void Update()
     {
-        VerticalSpeed += -Gravity * Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            VerticalSpeed = 0;
-            VerticalSpeed += Jump;
-        }
-
-        Nave.transform.position += Vector3.up * VerticalSpeed * Time.deltaTime;
-
         // Actualizar combustible basado en la velocidad de la nave
         float tasaDeConsumo = CombustibleMaximo / DuracionCombustibleSegundos;
         CombustibleActual -= Time.deltaTime * tasaDeConsumo;
@@ -95,21 +52,6 @@ public class ControlDeNave : MonoBehaviour
 
         // Cambiar color de la barra de combustible según su nivel
         BarraCombustible.image.color = Color.Lerp(ColorCombustibleBajo, ColorCombustibleNormal, BarraCombustible.size);
-
-        // Pipe
-        PipeSpawnCountdown -= Time.deltaTime;
-        if (PipeSpawnCountdown <= 0)
-        {
-            PipeSpawnCountdown = PipeSpawnInterval;
-
-            // Crear tubería
-            GameObject pipe = Instantiate(PipePrefab);
-            pipe.transform.parent = PipesHolder.transform;
-            pipe.transform.name = (++PipeCount).ToString();
-
-            pipe.transform.position += Vector3.right * 30;
-            pipe.transform.position += Vector3.up * Mathf.Lerp(4, 9, Random.value);
-        }
 
         if (!juegoIniciado)
         {
@@ -127,9 +69,6 @@ public class ControlDeNave : MonoBehaviour
             }
         }
 
-        // Mover tuberías a la izquierda
-        PipesHolder.transform.position += Vector3.left * PipesSpeed * Time.deltaTime;
-
         if (CombustibleActual <= 0 || Nave.transform.position.y < LimiteInferior || Puntaje <= 0)
         {
             GameOver();
@@ -139,7 +78,6 @@ public class ControlDeNave : MonoBehaviour
         {
             Ganaste();
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -232,5 +170,4 @@ public class ControlDeNave : MonoBehaviour
         // Aquí debes cargar la siguiente escena. Puedes usar SceneManager.LoadScene o la lógica que prefieras.
         SceneManager.LoadScene("nivel2");
     }
-
 }
