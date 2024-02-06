@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Mercurio
+  - Asteroide
+  - Plataforma
   layers:
   - Default
   - TransparentFX

@@ -17,9 +17,9 @@ public class Explosion : MonoBehaviour
     {
         foreach (ContactPoint contact in collision.contacts)
         {
-            IvBeenHit(contact.point);
-
-        }
+            if(collision.gameObject.tag != "Plataforma")
+                IvBeenHit(contact.point);
+        }   
     }
 
     /*  public void AddForce(Vector3 hitPosition, Transform hitSource)
