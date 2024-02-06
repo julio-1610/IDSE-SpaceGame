@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class EnemyMovil : MonoBehaviour
 {
-    private float movementSpeed = 5f;
+    public float movementSpeed;
+    private float positionInicial;
     // Start is called before the first frame update
-
+    void Start() {
+        positionInicial = this.transform.position.x;
+    }
     void FixedUpdate()
     {
-        this.transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
-        if(transform.position.x > 16)
+        transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
+        if(this.transform.position.x > positionInicial + 10f)
             movementSpeed *= -1;
-        else if(transform.position.x < 8f)
+        else if(this.transform.position.x < positionInicial)
             movementSpeed *= -1; 
     }
 }
